@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { checkCityName } = require('./controller');
 
-const DB_URL = process.env.MONGO_URI || require('./config');
+const { DB_URL = require('./config') } = process.env;
+console.log(DB_URL);
 
 mongoose
   .connect(DB_URL)
