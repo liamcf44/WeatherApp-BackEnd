@@ -1,6 +1,7 @@
 const app = require('express')();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { checkCityName } = require('./controller');
 
 const DB_URL = process.env.DB_URL || require('./config'.DB_URL);
@@ -11,6 +12,8 @@ mongoose
     console.log(`Connected to Database at ${DB_URL}`);
   })
   .catch(console.log);
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
