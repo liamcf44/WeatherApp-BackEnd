@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-console.log(mongoose);
-
 const TownSchema = new Schema({
   id: {
     type: String,
